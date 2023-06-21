@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Report{
+
     private List<ReportItem> items;	// Отчетные данные
+    private Retoptable retoptable;
+
+    public Report(Retoptable retoptable) {
+        this.retoptable = retoptable;
+    }
 
     // расчет отчетных данных
     public void calculate(){
@@ -14,7 +20,6 @@ public class Report{
     }
 
     public void output(){
-        PrintReport reportPrint = new PrintReport();
-        reportPrint.output(items);
+        retoptable.output(items);
     }
 }
